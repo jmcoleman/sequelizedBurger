@@ -1,0 +1,43 @@
+<header class="header">
+  <img src="burgerapp2.jpg" alt="Burger"/>
+  <h1>Eat-Da-Burger!</h1>
+</header>
+
+<div id="main" class="wrapper">
+   {{#if burgers}}
+  <div class="left-content">
+    <h2>Ready to Serve</h2>
+    <ul>
+      {{#each burgers}}
+        {{#unless devoured}}
+          {{> burgers/burger-block devoured=0}}
+        {{/unless}}
+      {{/each}}
+    </ul>
+  </div>
+
+  <div class="right-content">
+    <h2>Devoured</h2>
+    <ul>
+      {{#each burgers}}
+        {{#if devoured}}
+          {{> burgers/burger-block devoured=1}}
+        {{/if}}
+      {{/each}}
+    </ul>
+  </div>
+  {{/if}}
+
+</div>
+
+<!--h2>Add a Burger</h2-->
+<form method="POST" action="/api/burgers" class="create-form">
+
+  <div class="form-group">
+    <textarea id="burg" name="burger_name" maxlength="30" rows="4" cols="50"></textarea>
+  </div>
+
+  <button id="burger-submit" type="submit">Submit</button>
+  <p>Enter a burger you want to eat.  Click the "Submit" button.</p>
+
+</form>
