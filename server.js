@@ -1,8 +1,13 @@
+require('dotenv').config();
+
 //////////////////////////
 // dependencies
 //////////////////////////
 var express = require("express");
 var bodyParser = require("body-parser");
+
+// models are required to sync them
+var db = require("./models");
 
 ///////////////////////
 // configure Express
@@ -35,9 +40,12 @@ var routes = require("./controllers/burgers_controller.js");
 
 app.use(routes);
 
-//////////////////////////////////////
-// start lisetening for requests
-//////////////////////////////////////
-app.listen(app.get('port'), function() {
-    console.log("App now listening at localhost: " + app.get('port'));
+////////////////////////////////////////////////////////////////////////////
+// syncing our sequelize models and then start listening for requests
+// use 'force: true' in sync call to override schema definition
+////////////////////////////////////////////////////////////////////////////
+db.sequelize.sync({ force: true }).then(function() {
+    app.listen(app.get('port'), function() {
+        console.log("App now listening at localhost: " + app.get('port'));
+    });
 });

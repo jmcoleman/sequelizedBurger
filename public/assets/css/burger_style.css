@@ -27,15 +27,30 @@ li {
     margin: 0;
 }
 
+
+textarea {
+    resize:vertical;
+}
+
 button {
     padding: 8px 8px;
+}
+
+input[type=text], textarea {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
 }
 
 .label {
     font-weight: bold;
 }
 
-.form-group {
+.form-burger {
     margin-top: 50px;
     margin-bottom: 10px;
 }
@@ -54,6 +69,8 @@ button {
     color: white;
     border: 1px solid black;
     padding: 8px;
+    margin-top: 15px;
+    text-align: center;
 }
 
 /***************************
@@ -72,13 +89,19 @@ button {
     grid-area: devoured-burgers;
 }
 
+.add-burgers {
+    grid-area: addBurgers;
+    /* text-align: left; */
+}
+
 .wrapper {
     display: grid;
     grid-gap: 0px 40px;
     grid-template-columns: 50% 50%;
     grid-template-areas:
         "header header"
-        "burgers devoured-burgers";
+        "burgers devoured-burgers"
+        "addBurgers addBurgers";
     margin-left: 24%;
     margin-right: 24%;
 }

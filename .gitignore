@@ -1,0 +1,4 @@
+# files to ignore for project
+node_modules
+temp
+.env
