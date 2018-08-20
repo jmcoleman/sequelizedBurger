@@ -1,5 +1,5 @@
 # Eat-Da-Burger
-Eat-Da-Burger is a burger logger with MySQL, Node, Express, Handlebars and a homemade ORM. It follows the MVC design pattern and uses Node and MySQL to query and route data in the app. It uses Handlebars to generate the HTML.
+Eat-Da-Burger is a burger logger with MySQL, Node, Express, Handlebars and sequelize. It follows the MVC design pattern and uses Node and MySQL to query and route data in the app. It uses Handlebars to generate the HTML and Sequelize as the ORM.
 
 **Problem it solves:** \
 Allows burgers to be tracked accoridng to whether they are devoured or not.
@@ -8,7 +8,7 @@ Allows burgers to be tracked accoridng to whether they are devoured or not.
 New burgers are added and as they are devoured, their state updates and is persisted in the database.  The burger and it's state is presented on the UI with the ability to change state.
 
 **Technical approach:** \
-Creation of a burger logger that persists the burger name and state in MySQL.  Node, Express, Handlebars and a homemade ORM is used implementing the MVC design pattern.
+Creation of a burger logger that persists the burger name and state in MySQL.  Node, Express, Handlebars and Sequelize is used implementing the MVC design pattern.
 
 ## Getting Started
 
@@ -22,7 +22,8 @@ Creation of a burger logger that persists the burger name and state in MySQL.  N
 npm install express
 npm install body-parser
 npm install express-handlebars
-npm install mysql
+npm install mysql2
+npm install sequelize
 
 # start the server
 node server.js
@@ -38,11 +39,11 @@ https://localhost:8080
 
 ### Prerequisites
 
-Node, NPM, MySql, Express, Handlebars
+Node, NPM, MySql, Express, Handlebars, Sequelize
 
 ### Installing
 
-To get a development environment up and running, clone the repository locally.  You will need node installed, npm, express, handlebars and mysql.    
+To get a development environment up and running, clone the repository locally.  You will need node installed, npm, express, handlebars, sequelize and mysql.    
 
 ## Running tests
 
@@ -52,15 +53,14 @@ Testing was done to create, read, update and devour burgers.
 
 The project should be run from the browser by specifying http://localhost:8080 after starting node.
 
-The project is hosted on heroku at https://calm-meadow-47544.herokuapp.com/ 
-(https://git.heroku.com/calm-meadow-47544.git)
+The project is hosted on heroku at TBD
 
 ## Built With
 
-The following npm packages are used: express, express-handlebars, body-parser, mysql
+The following npm packages are used: express, express-handlebars, body-parser, mysql, sequelize
 
 **Technologies**\
-JavaScript, Node, HMTL, CSS, Handlebars, Express, MySQL
+JavaScript, Node, HMTL, CSS, Handlebars, Express, MySQL2, Sequelize
 
 ## Contributing
 
